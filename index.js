@@ -1,10 +1,6 @@
-// const yagrs = require("yargs");
-// const { hideBin } = require('yargs/helpers');
 const {program} = require('commander')
 const contacts = require('./contacts');
 
-
-// TODO: рефакторить
 async function invokeAction({ action, id, name, email, phone }) {
     switch (action) {
         case "list":
@@ -31,14 +27,6 @@ async function invokeAction({ action, id, name, email, phone }) {
       console.warn("\x1B[31m Unknown action type!");
   }
 }
-
-// const arr = hideBin(process.argv);
-// const { argv } = yagrs(arr);
-// invokeAction(argv)
-// invokeAction({ action: 'list' })
-// invokeAction({ action: 'get' , contactsId: '1DEXoP8AuCGYc1YgoQ6hw' })
-// invokeAction({ action: 'add' , name: 'mustafa', email: 'mustafa@gmail.com', phone: 'babah1' })
-// invokeAction({ action: 'remove' , id:"Z5sbDlS7pCzNsnAHLtDJd" })
 
 program
     .option('--action <type>')
